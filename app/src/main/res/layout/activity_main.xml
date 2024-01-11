@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- First TextView -->
+    <TextView
+        android:id="@+id/display1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="16dp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Second TextView -->
+    <TextView
+        android:id="@+id/display2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="16dp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/display1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Third TextView -->
+    <TextView
+        android:id="@+id/display3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#EEEEEE"
+        android:padding="16dp"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/display2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+
+    <!-- Button 1, positioned below the third TextView -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="1"
+        app:layout_constraintTop_toBottomOf="@id/display3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintTop_toTopOf="@id/button1"
+        app:layout_constraintLeft_toRightOf="@id/button1"
+        app:layout_constraintRight_toLeftOf="@id/button3"/>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="3"
+        app:layout_constraintTop_toTopOf="@id/button2"
+        app:layout_constraintLeft_toRightOf="@id/button2"
+        app:layout_constraintRight_toLeftOf="@id/button_plus"/>
+
+    <!-- Botón con signo + -->
+    <Button
+        android:id="@+id/button_plus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintTop_toTopOf="@id/button3"
+        app:layout_constraintBottom_toBottomOf="@id/button3"
+        app:layout_constraintLeft_toRightOf="@id/button3"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón 4 -->
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="4"
+        app:layout_constraintTop_toBottomOf="@id/button1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button5"/>
+
+    <!-- Botón 5 -->
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="5"
+        app:layout_constraintTop_toTopOf="@id/button4"
+        app:layout_constraintLeft_toRightOf="@id/button4"
+        app:layout_constraintRight_toLeftOf="@id/button6"/>
+
+    <!-- Botón 6 -->
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="6"
+        app:layout_constraintTop_toTopOf="@id/button5"
+        app:layout_constraintLeft_toRightOf="@id/button5"
+        app:layout_constraintRight_toLeftOf="@id/button_minus"/>
+
+    <!-- Botón con signo - -->
+    <Button
+        android:id="@+id/button_minus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintTop_toTopOf="@id/button6"
+        app:layout_constraintBottom_toBottomOf="@id/button6"
+        app:layout_constraintLeft_toRightOf="@id/button6"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón 7 -->
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="7"
+        app:layout_constraintTop_toBottomOf="@id/button4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button8"/>
+
+    <!-- Botón 8 -->
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="8"
+        app:layout_constraintTop_toTopOf="@id/button7"
+        app:layout_constraintLeft_toRightOf="@id/button7"
+        app:layout_constraintRight_toLeftOf="@id/button9"/>
+
+    <!-- Botón 9 -->
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="9"
+        app:layout_constraintTop_toTopOf="@id/button8"
+        app:layout_constraintLeft_toRightOf="@id/button8"
+        app:layout_constraintRight_toLeftOf="@id/button_multiply"/>
+
+    <!-- Botón de borrrar) -->
+    <Button
+        android:id="@+id/button_multiply"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="="
+        app:layout_constraintTop_toTopOf="@id/button9"
+        app:layout_constraintBottom_toBottomOf="@id/button9"
+        app:layout_constraintLeft_toRightOf="@id/button9"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón x -->
+    <Button
+        android:id="@+id/button_x"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="x"
+        app:layout_constraintTop_toBottomOf="@id/button_multiply"
+        app:layout_constraintLeft_toLeftOf="@id/button3"
+        app:layout_constraintRight_toLeftOf="@id/button_y"/>
+
+    <!-- Botón y -->
+    <Button
+        android:id="@+id/button_y"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="y"
+        app:layout_constraintTop_toTopOf="@id/button_x"
+        app:layout_constraintLeft_toRightOf="@id/button_x"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón Clear -->
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        app:layout_constraintTop_toBottomOf="@id/button_y"
+        app:layout_constraintLeft_toLeftOf="@id/button_y"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón Result -->
+    <Button
+        android:id="@+id/button_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        app:layout_constraintTop_toBottomOf="@id/button_clear"
+        app:layout_constraintLeft_toLeftOf="@id/button_clear"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <!-- Botón con Flechas Arriba/Abajo -->
+    <Button
+        android:id="@+id/button_arrows"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="↑↓"
+    app:layout_constraintTop_toBottomOf="@id/button_result"
+    app:layout_constraintLeft_toLeftOf="@id/button_result"
+    app:layout_constraintRight_toRightOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
