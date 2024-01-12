@@ -43,12 +43,25 @@ class CalculatorModel {
 
 
     fun parseEquation(equation: String): Triple<Double, Double, Double>? {
-        val pattern = Regex("([+-]?\\d*)x([+-]?\\d*)y=([+-]?\\d+)")
-        val match = pattern.matchEntire(equation)
+        val pattern = Regex("\\s*([+-]?\\s*\\d*\\.?\\d*\\s*x)?\\s*([+-]?\\s*\\d*\\.?\\d*\\s*y)?\\s*=\\s*([+-]?\\s*\\d*\\.?\\d*)\\s*")
+        val match = pattern.matchEntire(equation.trim())
 
-        return match?.let {
-            val (a, b, c) = it.destructured
-            Triple(a.toDoubleOrNull() ?: 1.0, b.toDoubleOrNull() ?: 1.0, c.toDouble())
+        return if (match != null) {
+            val (xTerm, yTerm, c) = match.destructured
+
+            val aCoeff = when {
+                xTerm.contains('x') -> if (xTerm.filter { it.isDigit() || it == '.' || it == '-' || it == '+' }.isEmpty()) 1.0 else xTerm.filter { it.isDigit() || it == '.' || it == '-' || it == '+' }.toDoubleOrNull() ?: 0.0
+                else -> 0.0
+            }
+            val bCoeff = when {
+                yTerm.contains('y') -> if (yTerm.filter { it.isDigit() || it == '.' || it == '-' || it == '+' }.isEmpty()) 1.0 else yTerm.filter { it.isDigit() || it == '.' || it == '-' || it == '+' }.toDoubleOrNull() ?: 0.0
+                else -> 0.0
+            }
+            val cCoeff = c.filter { it.isDigit() || it == '.' || it == '-' || it == '+' }.toDoubleOrNull() ?: 0.0
+
+            Triple(aCoeff, bCoeff, cCoeff)
+        } else {
+            null
         }
     }
 
